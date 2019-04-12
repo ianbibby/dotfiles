@@ -19,6 +19,7 @@ set winheight=10
 set winminheight=10
 set winwidth=30
 set winminwidth=30
+set foldmethod=syntax
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 au CursorHoldI * stopinsert
@@ -57,6 +58,9 @@ nnoremap <c-l> <c-w>l<c-w>_<c-w><bar>0
 " Map ,z to zoom a window manually
 nmap <leader>z <c-w>_<c-w><bar>0
 
+" Get information on a Go function, method, variable under the cursor
+nnoremap <leader>i :GoInfo<CR>
+
 " Colors
 let g:rehash256 = 1
 let g:molokai_original = 1
@@ -84,6 +88,7 @@ autocmd Filetype go command! -bang AS call go#alternate#Switch(<bang>0, 'split')
 " Show info in the status 
 " This seems to get in the way of Ctrl+P
 "let g:go_auto_type_info = 1
+let g:go_def_mode = "gopls"
 " Run goimports when running :GoFmt
 let g:go_fmt_command = "goimports"
 " Highlighting galor!
@@ -97,6 +102,9 @@ let g:go_highlight_structs = 1
 let g:go_highlight_types = 1
 " variables of the same name
 let g:go_auto_sameids = 1
+
+" GoTestCompile
+nnoremap <leader><leader>b :GoTestCompile<cr>
 
 "----------------------------------------------
 " Language: Protobuf
