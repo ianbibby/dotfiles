@@ -14,12 +14,13 @@ call plug#end()
 let mapleader = ','
 set cursorline
 set relativenumber
+set number
 set nowrap
 set winheight=10
 set winminheight=10
 set winwidth=30
 set winminwidth=30
-set foldmethod=syntax
+set foldmethod=manual
 
 " automatically leave insert mode after 'updatetime' milliseconds of inaction
 au CursorHoldI * stopinsert
